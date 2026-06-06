@@ -21,28 +21,28 @@ Project/
 
 ## Dataset
 Dataset Name: Student Performance
-Source: https://www.kaggle.com/datasets/nikhil7280/student-performance-
-multiple-linear-regression/data — 10,000 records of student performance data. After removing 234 duplicate rows, 9,766 unique records were used for training.
+
+Source: https://www.kaggle.com/datasets/nikhil7280/student-performance-multiple-linear-regression/data — 10,000 records of student performance data. After removing 234 duplicate rows, 9,766 unique records were used for training.
 
 ## Columns:
-1. Hours Studied
+#### 1. Hours Studied
 ○ Represents the number of hours a student studies per day.
 ○ Data Type: Numeric
-2. Previous Scores
+#### 2. Previous Scores
 ○ Indicates the student’s previous academic scores.
 ○ Data Type: Numeric
-3. Sleep Hours
+#### 3. Sleep Hours
 ○ Average number of hours a student sleeps per day.
 ○ Data Type: Numeric
-4. Sample Question Papers Practiced
+#### 4. Sample Question Papers Practiced
 ○ Number of practice question papers completed by the student.
 ○ Data Type: Numeric
-5. Extracurricular Activities
+#### 5. Extracurricular Activities
 ○ Indicates whether the student participates in extracurricular
 activities.
 ○ Values: Yes / No
 ○ Data Type: Categorical
-6. Performance Index
+#### 6. Performance Index
 ○ Represents the overall academic performance of the student.
 ○ Data Type: Numeric
 
