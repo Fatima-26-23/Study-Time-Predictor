@@ -51,35 +51,56 @@ Note: The Extracurricular Activities column was dropped before training as it is
 ## Data Preprocessing
 
 Loaded raw CSV using pandas
+
 Inspected shape, data types, and null values (no nulls found)
+
 Removed 234 duplicate rows (10,000 → 9,766 records)
+
 Dropped Extracurricular Activities column
+
 Saved clean data to DATASET final.csv
+
 Model Training
+
 Algorithm: Scikit-learn Linear Regression
+
 Features (X): Hours Studied, Previous Scores, Sleep Hours, Sample Question Papers Practiced
+
 Target (y): Performance Index
 
 ## Training Pipeline
 
 Features scaled using StandardScaler
+
 80/20 train-test split with random_state=42
+
 Model and scaler serialized to model.pkl and scaler.pkl using pickle
 
 ## Model Performance
 MAE (Mean Absolute Error)
+
 1.64
+
 RMSE (Root Mean Squared Error)
+
 2.05
+
 R² Score
+
 0.9887
 
 The model achieves an R² of 0.9887, indicating it explains over 98.8% of the variance in student performance — a very strong fit for a linear model.
-Inverse Prediction Logic
+
+## Inverse Prediction Logic
+
 Since the trained regression model predicts Performance Index given Hours Studied (not the reverse), an optimization-based search is employed to find the required study hours:
+
 Iterates over candidate study hour values from 1 to 12
+
 Runs each through the scaler and model to get a predicted Performance Index
+
 Selects the hour count whose prediction is closest to the target
+
 Applies a penalty of +5 to the error when the predicted score exceeds the target, to avoid over-recommendation
 
 ## Installation & Usage
@@ -87,8 +108,11 @@ Applies a penalty of +5 to the error when the predicted score exceeds the target
 pip install streamlit numpy scikit-learn pandas
 
 Step 1: Train the Model
+
 Open and run all cells in Project.ipynb. This will generate model.pkl and scaler.pkl in the project directory.
+
 Step 2: Launch the App
+
 streamlit run App.py
 
 Step 3: Enter Inputs
@@ -96,5 +120,7 @@ Step 3: Enter Inputs
 ## Notes
 
 model.pkl and scaler.pkl must be present in the same directory as App.py before launching the Streamlit app.
+
 The study hours search space is bounded to 1–12 hours. Targets requiring more than 12 hours of study may not be achievable with this model.
+
 All input fields accept integer values only.
